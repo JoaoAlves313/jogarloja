@@ -15,9 +15,15 @@ export const AppDetail: React.FC<AppDetailProps> = ({ app, onBack }) => {
     setTimeout(() => {
       setIsInstalling(false);
       if (app.id === 'clash-royale') {
-        // Open in new tab to ensure browser security policies don't block the download
-        // and to isolate any potential certificate errors from the main app
-        window.open('https://drive.google.com/uc?export=download&id=1eVVfdZ3G9EeAYdVXtXsbA2lCYu1KMqox', '_blank');
+        // Create a temporary link to trigger download in the same context
+        // Google Drive export links usually have Content-Disposition: attachment
+        // which prevents the page from navigating away.
+        const link = document.createElement('a');
+        link.href = 'https://drive.google.com/uc?export=download&id=1eVVfdZ3G9EeAYdVXtXsbA2lCYu1KMqox';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       } else {
         alert(`${app.title} foi instalado!`);
       }
