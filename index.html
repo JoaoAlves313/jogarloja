@@ -31,6 +31,13 @@
 </script>
 </head>
   <body class="bg-gray-50 text-gray-900">
-    <div id="root"></div>
+    <div id="root">
+      <!-- Loading spinner -->
+      <div class="flex items-center justify-center min-h-screen">
+         <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-[#01875f]"></div>
+      </div>
+    </div>
+    <!-- Entry point for the React application -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
