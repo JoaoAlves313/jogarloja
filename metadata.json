@@ -1,0 +1,5 @@
+{
+  "name": "Play Store Clone",
+  "description": "Uma réplica simplificada da Google Play Store apresentando Clash Royale e Flappy Dog.",
+  "requestFramePermissions": []
+}
