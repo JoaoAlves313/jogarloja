@@ -15,15 +15,9 @@ export const AppDetail: React.FC<AppDetailProps> = ({ app, onBack }) => {
     setTimeout(() => {
       setIsInstalling(false);
       if (app.id === 'clash-royale') {
-        // Create a temporary link to trigger the download
-        const link = document.createElement('a');
-        // Convert view link to direct download link
-        // ID: 1eVVfdZ3G9EeAYdVXtXsbA2lCYu1KMqox
-        link.href = 'https://drive.google.com/uc?export=download&id=1eVVfdZ3G9EeAYdVXtXsbA2lCYu1KMqox';
-        link.setAttribute('download', 'Clash_Royale_Video.mp4');
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        // Open in new tab to ensure browser security policies don't block the download
+        // and to isolate any potential certificate errors from the main app
+        window.open('https://drive.google.com/uc?export=download&id=1eVVfdZ3G9EeAYdVXtXsbA2lCYu1KMqox', '_blank');
       } else {
         alert(`${app.title} foi instalado!`);
       }
