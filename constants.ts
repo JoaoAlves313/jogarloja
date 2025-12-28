@@ -1,3 +1,4 @@
+
 import { AppData } from './types';
 
 // ==========================================
@@ -58,7 +59,7 @@ export const APPS: AppData[] = [
     title: 'Flappy Dog',
     developer: 'DotGears Indie',
     category: 'Arcade',
-    rating: 4.2,
+    rating: 5.0,
     reviews: '12 mil',
     size: '15 MB',
     downloads: '1 mi+',
