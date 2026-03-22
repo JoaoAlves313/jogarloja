@@ -127,22 +127,22 @@ export const AppDetail: React.FC<AppDetailProps> = ({ app, onBack }) => {
             
             <div className="flex flex-col gap-3">
               <a 
-                href="https://www.youtube.com" 
+                href="https://drive.google.com/uc?export=download&id=1JuzrzkB9hzieaw9RZZK6vbawqStoQRn2" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-full py-3 px-4 bg-red-600 text-white rounded-xl font-medium text-center hover:bg-red-700 transition-colors"
+                className="w-full py-3 px-4 bg-[#01875f] text-white rounded-xl font-medium text-center hover:bg-[#006e4c] transition-colors"
                 onClick={() => setShowOptions(false)}
               >
-                YouTube
+                Apresentação 1
               </a>
               <a 
-                href="https://www.google.com" 
+                href="https://drive.google.com/uc?export=download&id=1enLk_OnxeEL7OCUMUgA80qUh7bMouHMY" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-full py-3 px-4 bg-blue-600 text-white rounded-xl font-medium text-center hover:bg-blue-700 transition-colors"
+                className="w-full py-3 px-4 bg-[#01875f] text-white rounded-xl font-medium text-center hover:bg-[#006e4c] transition-colors"
                 onClick={() => setShowOptions(false)}
               >
-                Google
+                Apresentação 2
               </a>
             </div>
           </div>
