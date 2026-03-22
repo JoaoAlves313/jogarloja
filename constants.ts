@@ -38,7 +38,32 @@ const FLAPPY_DOG_ASSETS = {
   ]
 };
 
+const MINECRAFT_ASSETS = {
+  icon: 'https://play-lh.googleusercontent.com/VSwHQjcAttxsLE47RuS4PqpC4LT7lCoSjE7Hx5AW_yCxtDvcnsHHvm5CTuL5BPN-uRTP',
+  banner: 'https://picsum.photos/seed/minecraft-banner/800/400',
+  screenshots: [
+    'https://picsum.photos/seed/minecraft-gameplay-1/300/600',
+    'https://picsum.photos/seed/minecraft-gameplay-2/300/600',
+    'https://picsum.photos/seed/minecraft-gameplay-3/300/600',
+  ]
+};
+
 export const APPS: AppData[] = [
+  {
+    id: 'minecraft',
+    title: 'Minecraft',
+    developer: 'Mojang',
+    category: 'Arcade',
+    rating: 4.6,
+    reviews: '5 mi',
+    size: '150 MB',
+    downloads: '50 mi+',
+    ratedFor: '10+',
+    icon: MINECRAFT_ASSETS.icon,
+    banner: MINECRAFT_ASSETS.banner,
+    description: 'Explore mundos infinitos e construa desde simples casas até grandiosos castelos. Jogue no modo criativo com recursos ilimitados ou minere fundo no mundo no modo sobrevivência, criando armas e armaduras para lutar contra criaturas perigosas.',
+    screenshots: MINECRAFT_ASSETS.screenshots
+  },
   {
     id: 'clash-royale',
     title: 'Clash Royale',

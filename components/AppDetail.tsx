@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, ArrowLeft } from 'lucide-react';
+import { Star, ArrowLeft, X } from 'lucide-react';
 import { AppData } from '../types';
 
 interface AppDetailProps {
@@ -9,8 +9,14 @@ interface AppDetailProps {
 
 export const AppDetail: React.FC<AppDetailProps> = ({ app, onBack }) => {
   const [isInstalling, setIsInstalling] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
 
   const handleInstall = () => {
+    if (app.id === 'minecraft') {
+      setShowOptions(true);
+      return;
+    }
+
     setIsInstalling(true);
     setTimeout(() => {
       setIsInstalling(false);
@@ -31,7 +37,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({ app, onBack }) => {
   };
 
   return (
-    <div className="bg-white min-h-screen pb-10 animate-fade-in">
+    <div className="bg-white min-h-screen pb-10 animate-fade-in relative">
       {/* Navbar for Detail View */}
       <nav className="sticky top-0 bg-white z-40 flex items-center px-4 py-4 shadow-sm">
         <button onClick={onBack} className="p-2 -ml-2 rounded-full hover:bg-gray-100 transition-colors">
@@ -91,7 +97,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({ app, onBack }) => {
                       : 'bg-[#01875f] text-white hover:bg-[#006e4c] shadow-md hover:shadow-lg'
                   }`}
               >
-                  {isInstalling ? 'Instalando...' : 'Instalar'}
+                  {isInstalling ? 'Instalando...' : 'Baixar'}
               </button>
           </div>
         </div>
@@ -107,6 +113,41 @@ export const AppDetail: React.FC<AppDetailProps> = ({ app, onBack }) => {
           </p>
         </div>
       </div>
+
+      {/* Options Modal for Minecraft */}
+      {showOptions && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+          <div className="bg-white rounded-2xl w-full max-w-sm p-6 shadow-xl animate-fade-in">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-lg font-bold text-gray-900">Opções de Download</h3>
+              <button onClick={() => setShowOptions(false)} className="p-1 rounded-full hover:bg-gray-100">
+                <X className="w-5 h-5 text-gray-500" />
+              </button>
+            </div>
+            
+            <div className="flex flex-col gap-3">
+              <a 
+                href="https://www.youtube.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 bg-red-600 text-white rounded-xl font-medium text-center hover:bg-red-700 transition-colors"
+                onClick={() => setShowOptions(false)}
+              >
+                YouTube
+              </a>
+              <a 
+                href="https://www.google.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 bg-blue-600 text-white rounded-xl font-medium text-center hover:bg-blue-700 transition-colors"
+                onClick={() => setShowOptions(false)}
+              >
+                Google
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
