@@ -48,7 +48,33 @@ const MINECRAFT_ASSETS = {
   ]
 };
 
+const ARTES_ASSETS = {
+  icon: 'https://picsum.photos/seed/artes-icon/200/200',
+  banner: 'https://picsum.photos/seed/artes-banner/800/400',
+  screenshots: [
+    'https://picsum.photos/seed/artes-screen-1/300/600',
+    'https://picsum.photos/seed/artes-screen-2/300/600',
+    'https://picsum.photos/seed/artes-screen-3/300/600',
+  ]
+};
+
 export const APPS: AppData[] = [
+  {
+    id: 'artes',
+    title: 'Artes',
+    developer: 'Estúdio Criativo',
+    category: 'Arte e Design',
+    rating: 4.8,
+    reviews: '2 mi',
+    size: '45 MB',
+    downloads: '10 mi+',
+    ratedFor: 'Livre',
+    icon: ARTES_ASSETS.icon,
+    banner: ARTES_ASSETS.banner,
+    description: 'Um aplicativo incrível para criar, editar e compartilhar suas artes! Desenhe usando várias ferramentas de pincel, crie camadas incríveis e exporte em alta resolução.',
+    screenshots: ARTES_ASSETS.screenshots,
+    type: 'app'
+  },
   {
     id: 'minecraft',
     title: 'Minecraft',
@@ -62,7 +88,8 @@ export const APPS: AppData[] = [
     icon: MINECRAFT_ASSETS.icon,
     banner: MINECRAFT_ASSETS.banner,
     description: 'Explore mundos infinitos e construa desde simples casas até grandiosos castelos. Jogue no modo criativo com recursos ilimitados ou minere fundo no mundo no modo sobrevivência, criando armas e armaduras para lutar contra criaturas perigosas.',
-    screenshots: MINECRAFT_ASSETS.screenshots
+    screenshots: MINECRAFT_ASSETS.screenshots,
+    type: 'game'
   },
   {
     id: 'clash-royale',
@@ -77,7 +104,8 @@ export const APPS: AppData[] = [
     icon: CLASH_ROYALE_ASSETS.icon,
     banner: CLASH_ROYALE_ASSETS.banner,
     description: 'Entre na Arena! Dos criadores de Clash of Clans vem um jogo multiplayer em tempo real com os Royales, seus personagens favoritos de Clash e muito, muito mais. Colecione e melhore dezenas de cartas com as tropas, feitiços e defesas de Clash of Clans que você conhece e ama, além dos Royales: Príncipes, Cavaleiros, Bebês Dragões e muito mais.',
-    screenshots: CLASH_ROYALE_ASSETS.screenshots
+    screenshots: CLASH_ROYALE_ASSETS.screenshots,
+    type: 'game'
   },
   {
     id: 'flappy-dog',
@@ -92,6 +120,7 @@ export const APPS: AppData[] = [
     icon: FLAPPY_DOG_ASSETS.icon,
     banner: FLAPPY_DOG_ASSETS.banner,
     description: 'Toque para voar! Guie o cachorro fofo pelos canos neste clássico arcade renascido e viciante. Mecânica simples, dificuldade impossível. Quão longe você consegue ir? Desafie seus amigos e bata o recorde nesta aventura de corrida sem fim.',
-    screenshots: FLAPPY_DOG_ASSETS.screenshots
+    screenshots: FLAPPY_DOG_ASSETS.screenshots,
+    type: 'game'
   }
 ];

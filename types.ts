@@ -12,4 +12,5 @@ export interface AppData {
   category: string;
   description: string;
   screenshots: string[];
+  type?: 'game' | 'app';
 }

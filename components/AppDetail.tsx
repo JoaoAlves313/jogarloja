@@ -22,10 +22,15 @@ export const AppDetail: React.FC<AppDetailProps> = ({ app, onBack }) => {
       setIsInstalling(false);
       if (app.id === 'clash-royale') {
         // Create a temporary link to trigger download in the same context
-        // Google Drive export links usually have Content-Disposition: attachment
-        // which prevents the page from navigating away.
         const link = document.createElement('a');
         link.href = 'https://drive.google.com/uc?export=download&id=1eVVfdZ3G9EeAYdVXtXsbA2lCYu1KMqox';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else if (app.id === 'artes') {
+        const link = document.createElement('a');
+        link.href = 'https://drive.google.com/uc?export=download&id=1bUuAnod3XCbtHR3N2PqxkBuVZCyesua9';
         link.style.display = 'none';
         document.body.appendChild(link);
         link.click();
