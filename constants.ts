@@ -58,7 +58,33 @@ const ARTES_ASSETS = {
   ]
 };
 
+const MTV_ASSETS = {
+  icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512"><rect width="512" height="512" rx="100" fill="%23111111"/><path d="M75 375 L75 145 L160 145 L220 270 L280 145 L365 145 L365 375 L295 375 L295 240 L245 345 L195 345 L145 240 L145 375 Z" fill="%23FFE600"/><polygon points="340,195 445,195 445,240 405,240 405,375 365,375 365,240 340,240" fill="%2300E5FF"/><path d="M405 240 L445 240 L425 375 L385 375 Z" fill="%23FF1744" opacity="0.95"/><text x="256" y="440" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="34" fill="%23FFFFFF" text-anchor="middle" letter-spacing="3">MUSIC TELEVISION</text></svg>',
+  banner: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&auto=format&fit=crop&q=80',
+  screenshots: [
+    'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=600&auto=format&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300&h=600&auto=format&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=300&h=600&auto=format&fit=crop&q=80',
+  ]
+};
+
 export const APPS: AppData[] = [
+  {
+    id: 'mtv',
+    title: 'MTV',
+    developer: 'MTV Networks',
+    category: 'Entretenimento',
+    rating: 1.0,
+    reviews: '1.2 mi',
+    size: '42 MB',
+    downloads: '100 mi+',
+    ratedFor: '14+',
+    icon: MTV_ASSETS.icon,
+    banner: MTV_ASSETS.banner,
+    description: 'Assista aos melhores programas, séries e videoclipes da MTV diretamente no seu dispositivo! Acompanhe reality shows clássicos, premiações mundiais de música, entrevistas exclusivas e transmissões ao vivo dos maiores festivais.',
+    screenshots: MTV_ASSETS.screenshots,
+    type: 'app'
+  },
   {
     id: 'artes',
     title: 'Artes',

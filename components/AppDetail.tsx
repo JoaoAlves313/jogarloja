@@ -35,6 +35,13 @@ export const AppDetail: React.FC<AppDetailProps> = ({ app, onBack }) => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+      } else if (app.id === 'mtv') {
+        const link = document.createElement('a');
+        link.href = 'https://drive.google.com/uc?export=download&id=19XR-9oAtyrizJW8-Meu6edOHtWt1ZYd0';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       } else {
         alert(`${app.title} foi instalado!`);
       }
@@ -110,7 +117,9 @@ export const AppDetail: React.FC<AppDetailProps> = ({ app, onBack }) => {
         {/* About Section */}
         <div className="px-6 mt-6 mb-10">
           <div className="flex items-center justify-between mb-3">
-              <h2 className="text-xl font-bold text-gray-900">Sobre este jogo</h2>
+              <h2 className="text-xl font-bold text-gray-900">
+                {app.type === 'app' ? 'Sobre este app' : 'Sobre este jogo'}
+              </h2>
               <ArrowLeft className="w-5 h-5 text-gray-500 rotate-180" />
           </div>
           <p className="text-sm text-gray-600 leading-relaxed">
